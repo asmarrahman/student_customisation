@@ -1,0 +1,8 @@
+./odoo-bin --addons-path="addons,student_customisation" -u training_db1 -u new_cust_module
+
+
+
+
+
+
+

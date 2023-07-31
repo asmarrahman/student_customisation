@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <record id="student_sequence" model="ir.sequence">
+            <field name="name">Student</field>
+            <field name="code">new_cust_module.student</field>
+            <field name="prefix">ST</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id='student_action' model='ir.actions.act_window'>
+            <field name="name">Student</field>
+            <field name="res_model">new_cust_module.student</field>
+            <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a Student
+                </p>
+            </field>
+        </record>
+
+        <record id='student_tree' model='ir.ui.view'>
+            <field name='name'>student.tree</field>
+            <field name='model'>new_cust_module.student</field>
+            <field name='arch' type='xml'>
+                <tree string='student'>
+                    <field name="sequence"/>
+                   	<field name="image"/>
+                    <field name='name'/>
+                    <field name='dob'/>
+                    <field name='age'/>
+                    <field name='classes'/>
+                </tree>
+            </field>
+        </record>
+
+        <record id='student_form' model='ir.ui.view'>
+			<field name='name'>student.form</field>
+			<field name='model'>new_cust_module.student</field>
+			<field name='arch' type='xml'>
+				<form string='student'>
+					<sheet>
+						<group>
+							<group>
+								<h1>
+									<field name="sequence"/>
+								</h1>
+								<field name='name'/>
+								<field name='dob'/>
+								<field name='age'/>
+								<field name='classes'/>
+							</group>
+							<group>
+								<field name="image"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+    </data>
+</odoo>
