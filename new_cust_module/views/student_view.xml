@@ -51,7 +51,7 @@
 								<field name='classes'/>
 							</group>
 							<group>
-								<field name="image"/>
+								<field name="image" widget='image'/>
 							</group>
 						</group>
 					</sheet>
