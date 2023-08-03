@@ -20,12 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','website'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/student_view.xml',
+        'views/student_website.xml',
+        'views/student_img_web.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

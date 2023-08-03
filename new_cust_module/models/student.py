@@ -6,11 +6,11 @@ class Student(models.Model):
     _name = 'new_cust_module.student'
     _description = 'New Cust Module Student'
 
-    name = fields.Char(string = 'Name',required = True)
-    dob = fields.Date(string = 'Date of Birth')
-    age = fields.Integer(string = 'Age',compute='_compute_age',store=True)
-    classes = fields.Char(string = 'Class')
-    image = fields.Binary(string = 'Image')
+    name = fields.Char(string='Name', required=True, tracking=True)
+    dob = fields.Date(string='Date of Birth', tracking=True)
+    age = fields.Integer(string='Age', compute='_compute_age', store=True, tracking=True)
+    classes = fields.Char(string='Class', tracking=True)
+    image = fields.Binary(string='Image', tracking=True)
     sequence = fields.Char(string='Sequence', required=True, copy=False, readonly=True, default=lambda self: _('New'))
 
 
@@ -28,3 +28,4 @@ class Student(models.Model):
         if vals.get('sequence', _('New')) == _('New'):
             vals['sequence'] = self.env['ir.sequence'].next_by_code('new_cust_module.student') or _('New')
         return super(Student, self).create(vals)
+    

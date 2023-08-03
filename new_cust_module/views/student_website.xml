@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record id="student_reg_page_menu" model="website.menu">
+            <field name="name">Student Registration</field>
+            <field name="url">/school/student_registration</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">11</field>
+        </record>
+
+
+        <template id="student_reg_page_template">
+            <link rel="stylesheet" type="text/css" href="/new_cust_module/static/css/student_reg.css"/>
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"/>
+            <body>
+                <div class="container" id="enquiry-form">
+                    <div class="enquirybox">
+                        <h1 class="title">Student Registration</h1>
+                        <form name="form" action="/school/student_registration/success" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-grp">
+                                <i class="mdi mdi-account-outline"></i>
+                                <input type="text" name="name" placeholder="Name" required="required"/>
+                            </div>
+                            <div class="form-grp">
+                                <i class="mdi mdi-account-tie"></i>
+                                <input type="text" name="classes" placeholder="Class" required="required"/>
+                            </div>
+                            <div class="btn-grp">
+                                <input type="submit" value="SUBMIT" class="submit-btn"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </body>
+        </template>
+    </data>
+</odoo>
